@@ -1,0 +1,666 @@
+/*
+Theme Name: Whapaso
+Template: wp-bootstrap-4
+Author: Tinsel ship
+Author URI: http://tinselship.com
+Description: "Whapaso" is a simple &amp; easy to use WordPress theme. It is based on world's most popular framework for responsive websites, Twitter Bootstrap 4. "Whapaso" is a perfect combination of Bootstrap 4 and WordPress. It is fast and light-weight with around 20 kb style.css. It is also search engine friendly. It has a built-in slider for featured posts on blog's home page. It supports all major &amp; popular WordPress plugins like Jetpack, Contact Form 7, Elementor, Beaver Builder, SiteOrigin Page Builder etc. Check demo on https://bootstrap-wp.com
+Tags: custom-background,custom-logo,custom-menu,featured-images,threaded-comments,translation-ready,two-columns,left-sidebar,right-sidebar,custom-colors,footer-widgets,full-width-template,rtl-language-support,sticky-post,theme-options,blog
+Version: 1.0.9.1543248979
+Updated: 2018-11-26 16:16:19
+
+*/
+@font-face {
+    font-family: Helvetica;
+    src: url(fonts/HelveticaNeueLTStd\ Lt.woff);
+}
+h1,h2,h3,h4,h5{
+    font-family: Helvetica;
+}
+.front-header img{
+    height: 30px;
+    width: auto;
+}
+.menu-icon{
+    position: fixed;
+    right: 10px;
+    top:10px;
+    z-index: 10000;
+}
+#nav-icon1{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 0px auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+#nav-icon1 span{
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #000;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+#nav-icon1 span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #nav-icon1 span:nth-child(2) {
+    top: 10px;
+  }
+  
+  #nav-icon1 span:nth-child(3) {
+    top: 20px;
+  }
+  
+  #nav-icon1.open span:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  
+  #nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  
+  #nav-icon1.open span:nth-child(3) {
+    top: 10px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+#menu.open{
+    opacity: 1;
+    right: -100vh;
+}
+#menu{
+    position: fixed;
+    z-index: 999;
+    right: -101vh;
+    display: flex;
+    width: 100vh;
+    margin: 0;
+    justify-content: space-around;
+    transform: rotate(90deg);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    background: rgba(255, 255, 255, 0.3);
+    list-style: none;
+    top:0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    padding: 8px 0 10px 40px;
+}
+#menu li a{
+    color: rgba(0, 0, 0, 0.70);
+    text-decoration: none;
+    line-height: 34px;
+}
+#section1 .textE{
+    visibility: hidden;
+}
+.welcome{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff url(/wp-content/uploads/2018/12/whapaso-1.gif) center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center; 
+}
+.whapasoVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+.section{
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+}
+@keyframes slide {
+    0% {
+        right: 100%;
+    }
+    50% {
+        right: 0%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+.section.active::after{
+    content: "";
+    animation-name: slide;
+    animation-duration: 1s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: #000;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+.sec2{
+    background: #fff url(/wp-content/uploads/2018/11/culture.jpg) no-repeat top right;
+    background-size: contain;
+    background-position-x: 95%;
+}
+.sec2 .text_sec2 img{
+    width: auto;
+    height: 30px;
+    float: none;
+}
+.sec2 h1{
+    font-size: 130px;
+    text-align: left;
+    font-weight: bold;
+    margin: 0;
+    line-height: 110px;
+}
+.text_sec2{
+    /* margin-top: calc(35vh - 78px); */
+    display: table;
+    position: relative;
+    z-index: 1;
+}
+.sec2 h4{
+    font-size: 85px;
+    text-align: left;
+    font-weight: bold;
+    margin: 0;
+    line-height: 65px;
+}
+.loadmore{
+    display: table;
+    margin: auto;
+    border: 2px solid #333;
+    min-width: 180px;
+    padding: 10px;
+    cursor: pointer;
+}
+.sec3{
+    background: url(/wp-content/uploads/2018/12/smoke.png) no-repeat top left;
+    background-size: contain;
+    background-color: #222;
+}
+.sec3 h1{
+    font-size: 96px;
+}
+.sec3 h4{
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+.sec3 p{
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 44px;
+}
+.sec4{
+    background: url(/wp-content/uploads/2018/12/squares.gif) no-repeat top right;
+    background-size: cover;
+}
+.sec4 h1{
+    font-size: 96px;
+    padding-bottom: 50px;
+}
+.sec5{
+    background-image: url(/wp-content/uploads/2018/11/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.sec5 h2{
+    font-size: 42px;
+}
+.sec5 h4{
+    font-size: 24px;
+    font-weight: 400;
+}
+.sec5 a{
+    margin-top: 3rem;
+}
+.sec5 .col-md-6{
+    background: url(/wp-content/uploads/2018/11/text_bg.png) no-repeat center;
+    background-size: contain;
+    min-height: 80vh;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+}
+.sec5 .col-md-6 .btn-outline-dark{
+    min-width: 180px;
+    border-radius: 0;
+    border-width: 2px;
+}
+.sec6 h1{
+    font-size: 96px;
+}
+.contact-info{
+    position: absolute;
+    z-index: 1;
+    top: 10vh;
+}
+.ba-slider .handle:after{
+    margin: -32px 0 0 -20px!important;
+    width: 45px!important;
+}
+.footer{
+    background: #333333;
+}
+.banner{
+    background-size: cover;
+    background-position: center center;
+    height: calc(95vh - 88px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 88px;
+    position: relative;
+}
+.blog-single, .blog-archive, .vacancy-archive{
+    background: #f5f5f5;
+    padding: 5rem 0;
+}
+.vacancy-single{
+	background: #f5f5f5;
+    padding: 10rem 0;
+}
+.product-archive{
+    background: #f5f5f5;
+    padding: 7rem 0 4rem;
+}
+.blog-single img{
+    width: 100%!important;
+    height: auto!important;
+}
+.blog-single iframe{
+    width: 100%!important;
+}
+.banner .explore-more{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.banner h6{
+    margin-top: 7rem;
+}
+.blog-archive .overlay:hover::after{
+    opacity: 1;
+}
+.blog-archive a.overlay{
+    position: relative;
+    display: block;
+    height: 280px;
+    background-size: cover;
+    background-position: center center;
+}
+.blog-archive .overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.blog-archive .post-cat{
+    margin-left: auto;
+    display: table;
+    margin-top: -35px;
+    background: #333;
+    padding: 10px 20px;
+    position: relative;
+    color: #fff;
+}
+a:hover{
+    text-decoration: none;
+}
+.social i {
+    font-size: 20px;
+    margin: 10px;
+    border: 1px solid #fff;
+    padding: 5px;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 30px;
+    color: #fff;
+}
+.woocommerce-loop-product__title{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.featured-product-image{
+    background: url(/wp-content/uploads/2018/11/fp_bg.png) no-repeat center center;
+    background-size: contain;
+    text-align: center;
+    padding:2% 5%;
+}
+.products.row .col-md-4 img{
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    height: auto;
+}
+nav.all-page-header{
+    padding: 1.5rem;
+}
+nav.all-page-header #primary-menu li a{
+    color: #000;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.btn-apply-now{
+    border-radius: 0;
+    background: #d24a1b;
+    color: white;
+    border-color: #d24a1b;
+}
+.vacancy-archive-brief, .openings{
+    margin-top: 7rem;
+    margin-bottom: 8rem;
+}
+.vacancy-archive-brief p{
+    font-size: 30px;
+}
+.openings{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.openings .singles{
+    display: flex;
+    justify-content: space-between;
+}
+ul.iconic-available-attributes__values{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+ul.iconic-available-attributes__values li{
+    padding: 3px 10px;
+    border: 1px solid;
+    color: #333;
+    font-size: 12px;
+    margin: 0 3px;
+}
+#dragme {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    z-index: 300;
+}
+#dragme .icon-drag {
+    width: 30px;
+    height: 30px;
+    background: url(/wp-content/uploads/2018/12/drag-icon.png) no-repeat center center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    margin-top: -15px;
+}
+.view-before {
+    z-index: 100;
+}
+.view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 214px;
+}
+.wrapper-after, .wrapper-before {
+    position: relative;
+    height: 100%;
+    width: 100vw;
+}
+#before-after img {
+    max-width: none;
+}
+.img-wrapper img {
+    width: 100%;
+    height: auto;
+}
+.content-before-after .content-left{
+    width: 300px;
+    float: right;
+    text-align: center;
+}
+.view-after{
+    z-index: 200;
+    background: #d2491b;
+}
+.view-before{
+    background: #f3f3f3;
+}
+.content-before-after .content-right a{
+    color: #fff;
+    font-size: 13px;
+}
+.content-before-after.left-position .content-right a{
+    color: #000;
+}
+.all-page-header{
+    background: #fff;
+}
+.mt-7{
+    margin-top: 5rem!important;
+}
+.page-header{
+    padding: 40px;
+    background: #333;
+    color: #fff;
+    margin-bottom: 60px;
+    text-align: center;
+}
+span.woocommerce-input-wrapper{
+    display: block;
+    width: 100%;
+}
+.wc_payment_methods.payment_methods.methods, .wc_payment_method label{
+    padding: 0;
+}
+.wc_payment_method fieldset{
+    padding: 5px;
+}
+.woocommerce-checkout #payment ul.payment_methods .stripe-card-group, .wc-stripe-elements-field, .wc-stripe-elements-field{
+    width: 100%;
+}
+.woocommerce-checkout #payment .payment_method_stripe label[for=payment_method_stripe]{
+    padding-right: 32px;
+    padding-bottom: 10px;
+    background: #eee;
+    padding-top: 10px;
+}
+.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents{
+    width: 100%;
+}
+form.woocommerce-cart-form .product-remove .remove{
+    font-size: 25px;
+}
+form.woocommerce-cart-form .product-thumbnail img{
+    max-width: 100px;
+    max-height: 100px;
+}
+form.woocommerce-cart-form .product-quantity .screen-reader-text{
+    display: none;
+}
+.shop_table.shop_table_responsive.woocommerce-cart-form__contents .coupon{
+    justify-content: flex-end!important;
+}
+.shop_table.shop_table_responsive.woocommerce-cart-form__contents button[type="submit"]{
+    margin-top: 0;
+    margin-left: 5px;
+}
+.woocommerce-product-gallery__image img.wp-post-image{
+    width: 100%;
+    height: auto;
+}
+@media only screen and (max-width: 768px) {
+    .welcome{
+        background: #fff url(/wp-content/uploads/2018/12/whapaso-1.gif) center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .text_sec2{
+        min-width: 180px;
+    }
+    .sec2{
+        background-position: -75% 0;
+        background-size: cover;
+    }
+    .sec2 h4{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .sec2 h1{
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .sec3 h4{
+        font-size: 25px;
+        margin-right: 10%;
+    }
+    .sec3 p{
+        font-size: 30px;
+        line-height: 30px;
+        margin-right: 10%;
+    }
+    .sec4 h1{
+        font-size: 45px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .sec4 p{
+        line-height: 14px;
+        font-size: 14px;
+        font-weight: 300;
+        margin-right: 8%;
+    }
+    .sec5{
+        background-position: center left;
+    }
+    .sec5 h2{
+        font-size: 30px;
+    }
+    .sec5 h4{
+        font-size: 17px;
+    }
+    .sec5 a{
+        margin-top: 2rem;
+        font-size: 17px;
+    }
+    .sec5 .blog-wrapper{
+        padding: 1rem;
+    }
+    .sec6 .img-wrapper img{
+        margin-top: 50%;
+    }
+    .sec6 .col-md-3{
+        padding-bottom: 15px;
+    }
+    #menu{
+        justify-content: space-evenly;
+    }
+    .banner .explore-more{
+        display: none;
+    }
+    .banner{
+        min-height: 35vh;
+        height: auto;
+    }
+    .banner h1{
+        font-size: 20px;
+        max-width: 50%;
+    }
+    .banner h4{
+        font-size: 12px;
+        max-width: 48%;
+    }
+    .banner h6{
+        font-size: 12px;
+        max-width: 45%;
+        margin-top: 4rem;
+    }
+    .banner a.btn{
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+}
+@media only screen and (max-width: 450px){
+    .sec3 h4{
+        margin-right: 13%;
+    }
+    .sec3 p{
+        font-size: 28px;
+        line-height: 28px;
+        margin-right: 13%;
+    }
+    .sec4 p{
+        margin-right: 16%;
+    }
+    .sec4 h4{
+        font-size: 20px;
+        margin-right: 16%;
+    }
+    .sec4 .img-wrapper{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .sec4 .text-wrapper{
+        padding-left: 5px;
+    }
+    .sec5 h2{
+        font-size: 25px;
+    }
+    .sec4 h1 {
+        font-size: 40px;
+        padding-top: 30px;
+        padding-bottom: 5px;
+    }
+}
